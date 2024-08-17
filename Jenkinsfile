@@ -1,7 +1,8 @@
 pipeline {
-    agent any
+  agent any
     {
-     stage("test") {
+     stages{
+       stage("test") {
             steps {
                 script {
                     echo "Testing the application"
@@ -35,4 +36,5 @@ pipeline {
         }
       
     }
+}
 }
