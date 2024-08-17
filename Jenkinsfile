@@ -1,18 +1,25 @@
 pipeline {
     agent any
+ main
     stages {    
         stage("test") {
+            steps { 
+
+    stages {
+        
+        stage("test") {
             steps {
+jenkins-jobs
                 script {
                     echo "Testing the application"
                     echo "Executing pipeline for branch $BRANCH_NAME"
                 }
             }
         }
-        stage("build") {
+        stage("Build") {
             when{
                 expression{
-                    BRANCH_NAME == "master"
+                    BRANCH_NAME == "main"
                 }
             }
             steps {
@@ -21,10 +28,10 @@ pipeline {
                 }
             }
         }
-        stage("deploy") {
+        stage("Deploy") {
                 when{
                 expression{
-                    BRANCH_NAME == "master"
+                    BRANCH_NAME == "main"
                 }
             }
             steps {
