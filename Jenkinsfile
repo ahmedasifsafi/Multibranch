@@ -1,15 +1,8 @@
 pipeline {
     agent any
- main
-    stages {    
-        stage("test") {
-            steps { 
-
-    stages {
-        
-        stage("test") {
+    {
+     stage("test") {
             steps {
-jenkins-jobs
                 script {
                     echo "Testing the application"
                     echo "Executing pipeline for branch $BRANCH_NAME"
@@ -40,7 +33,6 @@ jenkins-jobs
                 }
             }
         }
-    }
       
     }
 }
